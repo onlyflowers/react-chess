@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import { CountComp } from './components/CountComp';
+import Chess from './components/Chess';
+import { ChessType } from './types/enums';
 
 function App() {
-  const [num, setNum] = useState(1);
   return (
     <div className="App">
-      <CountComp num={num} onChange={setNum} />
+      <Chess type={ChessType.red} />
+      <Chess type={ChessType.black} />
+      <Chess type={ChessType.none} />
     </div>
   );
 }
