@@ -1,14 +1,24 @@
 import React from 'react';
 import './App.css';
-import Chess from './components/Chess';
+import { ChessBoard } from './components/ChessBoard';
 import { ChessType } from './types/enums';
-
+const chessList = [
+  ChessType.black,
+  ChessType.none,
+  ChessType.red,
+  ChessType.black,
+  ChessType.black,
+  ChessType.none,
+  ChessType.red,
+  ChessType.black,
+  ChessType.red,
+]
 function App() {
   return (
     <div className="App">
-      <Chess type={ChessType.red} />
-      <Chess type={ChessType.black} />
-      <Chess type={ChessType.none} />
+      <ChessBoard chessList={chessList} onClick={(i) => {
+        console.log(i)
+      }}/>
     </div>
   );
 }
